@@ -13,6 +13,7 @@
 		DE06D4402270A84000036DF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE06D43F2270A84000036DF4 /* Assets.xcassets */; };
 		DE06D4432270A84000036DF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE06D4412270A84000036DF4 /* LaunchScreen.storyboard */; };
 		DE06D44E2270A84000036DF4 /* SnapshotTestingSandbox2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE06D44D2270A84000036DF4 /* SnapshotTestingSandbox2Tests.swift */; };
+		DE06D45B2270ABA900036DF4 /* SnapshotTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE06D45A2270AB8500036DF4 /* SnapshotTesting.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		DE06D4492270A84000036DF4 /* SnapshotTestingSandbox2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapshotTestingSandbox2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE06D44D2270A84000036DF4 /* SnapshotTestingSandbox2Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotTestingSandbox2Tests.swift; sourceTree = "<group>"; };
 		DE06D44F2270A84000036DF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE06D45A2270AB8500036DF4 /* SnapshotTesting.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapshotTesting.framework; path = Carthage/Build/iOS/SnapshotTesting.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE06D45B2270ABA900036DF4 /* SnapshotTesting.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +103,7 @@
 		DE06D4592270AB2D00036DF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE06D45A2270AB8500036DF4 /* SnapshotTesting.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,6 +135,7 @@
 				DE06D4452270A84000036DF4 /* Sources */,
 				DE06D4462270A84000036DF4 /* Frameworks */,
 				DE06D4472270A84000036DF4 /* Resources */,
+				DE06D45C2270ABAE00036DF4 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -199,6 +204,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DE06D45C2270ABAE00036DF4 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/SnapshotTesting.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SnapshotTesting.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DE06D4312270A83E00036DF4 /* Sources */ = {
@@ -407,6 +435,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B26C9CVAA2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SnapshotTestingSandbox2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -428,6 +460,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = B26C9CVAA2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SnapshotTestingSandbox2Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
